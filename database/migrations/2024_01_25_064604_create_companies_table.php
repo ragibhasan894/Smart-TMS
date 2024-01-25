@@ -21,8 +21,8 @@ return new class extends Migration
             $table->string('website_url');
             $table->string('contact_number');
             $table->string('contact_email');
-            $table->string('company_logo');
-            $table->mediumText('short_description');
+            $table->string('company_logo')->nullable();
+            $table->mediumText('short_description')->nullable();
             $table->string('status')->default(\App\Constants\Status::PENDING);
             $table->timestamps();
             $table->softDeletes();
