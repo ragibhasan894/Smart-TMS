@@ -16,6 +16,9 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->foreignId('role_id')->constrained('roles');
+            $table->foreignId('company_id')->constrained('companies');
+            $table->foreignId('district_id')->constrained('districts');
+            $table->foreignId('area_id')->constrained('areas');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('status')->default(\App\Constants\Status::ACTIVE);
